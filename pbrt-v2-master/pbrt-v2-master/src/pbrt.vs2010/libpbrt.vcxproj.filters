@@ -121,6 +121,18 @@
     <Filter Include="Source Files\3rdparty\tiff-3.9.4">
       <UniqueIdentifier>{cb4e6ae4-62ac-4eb3-afbd-99ce385b8ee3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\core\parser">
+      <UniqueIdentifier>{014ad86a-470d-4836-bf49-a5d1d690e8bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\parser">
+      <UniqueIdentifier>{b6a1b6cc-abd5-4113-92c5-218c39ad90c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core\api">
+      <UniqueIdentifier>{34ea219f-a438-4bd6-b573-67ed31ea80fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core\api">
+      <UniqueIdentifier>{a61f1df5-9157-4ed7-8b55-44673138f9b2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\3rdparty\ilmbase-1.0.2\half.h">
@@ -522,9 +534,6 @@
     <ClInclude Include="..\cameras\perspective.h">
       <Filter>Header Files\cameras</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\api.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\camera.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
@@ -583,9 +592,6 @@
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\paramset.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\parser.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\pbrt.h">
@@ -909,6 +915,15 @@
     <ClInclude Include="..\3rdparty\tiff-3.9.4\tif_config.h">
       <Filter>Header Files\3rdparty\tiff-3.9.4</Filter>
     </ClInclude>
+    <ClInclude Include="..\core\targa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\parser.h">
+      <Filter>Header Files\core\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\api.h">
+      <Filter>Header Files\core\api</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\3rdparty\ilmbase-1.0.2\half.cpp">
@@ -1217,9 +1232,6 @@
     <ClCompile Include="..\cameras\perspective.cpp">
       <Filter>Source Files\cameras</Filter>
     </ClCompile>
-    <ClCompile Include="..\core\api.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\core\camera.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
@@ -1269,9 +1281,6 @@
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\paramset.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\parser.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\primitive.cpp">
@@ -1550,12 +1559,6 @@
     <ClCompile Include="..\volumes\volumegrid.cpp">
       <Filter>Source Files\volumes</Filter>
     </ClCompile>
-    <ClCompile Include="..\core\pbrtlex.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\pbrtparse.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\3rdparty\tiff-3.9.4\tif_stream.cxx">
       <Filter>Source Files\3rdparty\tiff-3.9.4</Filter>
     </ClCompile>
@@ -1673,13 +1676,31 @@
     <ClCompile Include="..\3rdparty\tiff-3.9.4\mkg3states.c">
       <Filter>Source Files\3rdparty\tiff-3.9.4</Filter>
     </ClCompile>
+    <ClCompile Include="..\core\StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\targa.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\pbrtlex.cpp">
+      <Filter>Source Files\core\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\pbrtparse.cpp">
+      <Filter>Source Files\core\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\parser.cpp">
+      <Filter>Source Files\core\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\api.cpp">
+      <Filter>Source Files\core\api</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\core\pbrtlex.ll">
-      <Filter>Source Files\core</Filter>
+      <Filter>Source Files\core\parser</Filter>
     </None>
     <None Include="..\core\pbrtparse.yy">
-      <Filter>Source Files\core</Filter>
+      <Filter>Source Files\core\parser</Filter>
     </None>
   </ItemGroup>
 </Project>

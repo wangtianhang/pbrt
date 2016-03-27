@@ -675,6 +675,7 @@ Film *MakeFilm(const string &name,
 
 // API Function Definitions
 void pbrtInit(const Options &opt) {
+	printf("pbrtInit\n");
     PbrtOptions = opt;
     // API Initialization
     if (currentApiState != STATE_UNINITIALIZED)
@@ -687,6 +688,7 @@ void pbrtInit(const Options &opt) {
 
 
 void pbrtCleanup() {
+	printf("pbrtCleanup\n");
     ProbesCleanup();
     // API Cleanup
     if (currentApiState == STATE_UNINITIALIZED)
@@ -700,12 +702,14 @@ void pbrtCleanup() {
 
 
 void pbrtIdentity() {
+	printf("pbrtIdentity\n");
     VERIFY_INITIALIZED("Identity");
     FOR_ACTIVE_TRANSFORMS(curTransform[i] = Transform();)
 }
 
 
 void pbrtTranslate(float dx, float dy, float dz) {
+	printf("pbrtTranslate\n");
     VERIFY_INITIALIZED("Translate");
     FOR_ACTIVE_TRANSFORMS(curTransform[i] =
         curTransform[i] * Translate(Vector(dx, dy, dz));)
@@ -713,6 +717,7 @@ void pbrtTranslate(float dx, float dy, float dz) {
 
 
 void pbrtTransform(float tr[16]) {
+	printf("pbrtTransform\n");
     VERIFY_INITIALIZED("Transform");
     FOR_ACTIVE_TRANSFORMS(curTransform[i] = Transform(Matrix4x4(
         tr[0], tr[4], tr[8], tr[12],
@@ -723,6 +728,7 @@ void pbrtTransform(float tr[16]) {
 
 
 void pbrtConcatTransform(float tr[16]) {
+	printf("pbrtConcatTransform\n");
     VERIFY_INITIALIZED("ConcatTransform");
     FOR_ACTIVE_TRANSFORMS(curTransform[i] = curTransform[i] * Transform(
                 Matrix4x4(tr[0], tr[4], tr[8], tr[12],
@@ -733,12 +739,14 @@ void pbrtConcatTransform(float tr[16]) {
 
 
 void pbrtRotate(float angle, float dx, float dy, float dz) {
+	printf("pbrtRotate\n");
     VERIFY_INITIALIZED("Rotate");
     FOR_ACTIVE_TRANSFORMS(curTransform[i] = curTransform[i] * Rotate(angle, Vector(dx, dy, dz));)
 }
 
 
 void pbrtScale(float sx, float sy, float sz) {
+	printf("pbrtScale\n");
     VERIFY_INITIALIZED("Scale");
     FOR_ACTIVE_TRANSFORMS(curTransform[i] = curTransform[i] * Scale(sx, sy, sz);)
 }
@@ -746,6 +754,7 @@ void pbrtScale(float sx, float sy, float sz) {
 
 void pbrtLookAt(float ex, float ey, float ez, float lx, float ly,
         float lz, float ux, float uy, float uz) {
+	printf("pbrtLookAt\n");
     VERIFY_INITIALIZED("LookAt");
     FOR_ACTIVE_TRANSFORMS({ Warning("This version of pbrt fixes a bug in the LookAt transformation.\n"
                                     "If your rendered images unexpectedly change, add a \"Scale -1 1 1\"\n"
@@ -756,12 +765,14 @@ void pbrtLookAt(float ex, float ey, float ez, float lx, float ly,
 
 
 void pbrtCoordinateSystem(const string &name) {
+	printf("pbrtCoordinateSystem\n");
     VERIFY_INITIALIZED("CoordinateSystem");
     namedCoordinateSystems[name] = curTransform;
 }
 
 
 void pbrtCoordSysTransform(const string &name) {
+	printf("pbrtCoordSysTransform\n");
     VERIFY_INITIALIZED("CoordSysTransform");
     if (namedCoordinateSystems.find(name) !=
         namedCoordinateSystems.end())
@@ -773,21 +784,25 @@ void pbrtCoordSysTransform(const string &name) {
 
 
 void pbrtActiveTransformAll() {
+	printf("pbrtActiveTransformAll\n");
     activeTransformBits = ALL_TRANSFORMS_BITS;
 }
 
 
 void pbrtActiveTransformEndTime() {
+	printf("pbrtActiveTransformEndTime\n");
     activeTransformBits = END_TRANSFORM_BITS;
 }
 
 
 void pbrtActiveTransformStartTime() {
+	printf("pbrtActiveTransformStartTime\n");
     activeTransformBits = START_TRANSFORM_BITS;
 }
 
 
 void pbrtTransformTimes(float start, float end) {
+	printf("pbrtTransformTimes\n");
     VERIFY_OPTIONS("TransformTimes");
     renderOptions->transformStartTime = start;
     renderOptions->transformEndTime = end;
@@ -795,6 +810,7 @@ void pbrtTransformTimes(float start, float end) {
 
 
 void pbrtPixelFilter(const string &name, const ParamSet &params) {
+	printf("pbrtPixelFilter\n");
     VERIFY_OPTIONS("PixelFilter");
     renderOptions->FilterName = name;
     renderOptions->FilterParams = params;
@@ -802,6 +818,7 @@ void pbrtPixelFilter(const string &name, const ParamSet &params) {
 
 
 void pbrtFilm(const string &type, const ParamSet &params) {
+	printf("pbrtFilm\n");
     VERIFY_OPTIONS("Film");
     renderOptions->FilmParams = params;
     renderOptions->FilmName = type;
@@ -809,6 +826,7 @@ void pbrtFilm(const string &type, const ParamSet &params) {
 
 
 void pbrtSampler(const string &name, const ParamSet &params) {
+	printf("pbrtSampler\n");
     VERIFY_OPTIONS("Sampler");
     renderOptions->SamplerName = name;
     renderOptions->SamplerParams = params;
@@ -816,6 +834,7 @@ void pbrtSampler(const string &name, const ParamSet &params) {
 
 
 void pbrtAccelerator(const string &name, const ParamSet &params) {
+	printf("pbrtAccelerator\n");
     VERIFY_OPTIONS("Accelerator");
     renderOptions->AcceleratorName = name;
     renderOptions->AcceleratorParams = params;
@@ -823,6 +842,7 @@ void pbrtAccelerator(const string &name, const ParamSet &params) {
 
 
 void pbrtSurfaceIntegrator(const string &name, const ParamSet &params) {
+	printf("pbrtSurfaceIntegrator\n");
     VERIFY_OPTIONS("SurfaceIntegrator");
     renderOptions->SurfIntegratorName = name;
     renderOptions->SurfIntegratorParams = params;
@@ -830,6 +850,7 @@ void pbrtSurfaceIntegrator(const string &name, const ParamSet &params) {
 
 
 void pbrtVolumeIntegrator(const string &name, const ParamSet &params) {
+	printf("pbrtVolumeIntegrator\n");
     VERIFY_OPTIONS("VolumeIntegrator");
     renderOptions->VolIntegratorName = name;
     renderOptions->VolIntegratorParams = params;
@@ -837,6 +858,7 @@ void pbrtVolumeIntegrator(const string &name, const ParamSet &params) {
 
 
 void pbrtRenderer(const string &name, const ParamSet &params) {
+	printf("pbrtRenderer\n");
     VERIFY_OPTIONS("Renderer");
     renderOptions->RendererName = name;
     renderOptions->RendererParams = params;
@@ -844,6 +866,7 @@ void pbrtRenderer(const string &name, const ParamSet &params) {
 
 
 void pbrtCamera(const string &name, const ParamSet &params) {
+	printf("pbrtCamera\n");
     VERIFY_OPTIONS("Camera");
     renderOptions->CameraName = name;
     renderOptions->CameraParams = params;
@@ -853,6 +876,7 @@ void pbrtCamera(const string &name, const ParamSet &params) {
 
 
 void pbrtWorldBegin() {
+	printf("pbrtWorldBegin\n");
     VERIFY_OPTIONS("WorldBegin");
     currentApiState = STATE_WORLD_BLOCK;
     for (int i = 0; i < MAX_TRANSFORMS; ++i)
@@ -863,6 +887,7 @@ void pbrtWorldBegin() {
 
 
 void pbrtAttributeBegin() {
+	printf("pbrtAttributeBegin\n");
     VERIFY_WORLD("AttributeBegin");
     pushedGraphicsStates.push_back(graphicsState);
     pushedTransforms.push_back(curTransform);
@@ -871,6 +896,7 @@ void pbrtAttributeBegin() {
 
 
 void pbrtAttributeEnd() {
+	printf("pbrtAttributeEnd\n");
     VERIFY_WORLD("AttributeEnd");
     if (!pushedGraphicsStates.size()) {
         Error("Unmatched pbrtAttributeEnd() encountered. "
@@ -887,6 +913,7 @@ void pbrtAttributeEnd() {
 
 
 void pbrtTransformBegin() {
+	printf("pbrtTransformBegin\n");
     VERIFY_WORLD("TransformBegin");
     pushedTransforms.push_back(curTransform);
     pushedActiveTransformBits.push_back(activeTransformBits);
@@ -894,6 +921,7 @@ void pbrtTransformBegin() {
 
 
 void pbrtTransformEnd() {
+	printf("pbrtTransformEnd");
     VERIFY_WORLD("TransformEnd");
     if (!pushedTransforms.size()) {
         Error("Unmatched pbrtTransformEnd() encountered. "
@@ -909,6 +937,7 @@ void pbrtTransformEnd() {
 
 void pbrtTexture(const string &name, const string &type,
                  const string &texname, const ParamSet &params) {
+	printf("pbrtTexture\n");
     VERIFY_WORLD("Texture");
     TextureParams tp(params, params, graphicsState.floatTextures,
                      graphicsState.spectrumTextures);
@@ -937,6 +966,7 @@ void pbrtTexture(const string &name, const string &type,
 
 
 void pbrtMaterial(const string &name, const ParamSet &params) {
+	 printf("pbrtMaterial\n");
     VERIFY_WORLD("Material");
     graphicsState.material = name;
     graphicsState.materialParams = params;
@@ -946,6 +976,7 @@ void pbrtMaterial(const string &name, const ParamSet &params) {
 
 void pbrtMakeNamedMaterial(const string &name,
         const ParamSet &params) {
+	printf("pbrtMakeNamedMaterial\n");
     VERIFY_WORLD("MakeNamedMaterial");
     // error checking, warning if replace, what to use for transform?
     TextureParams mp(params, graphicsState.materialParams,
@@ -963,12 +994,14 @@ void pbrtMakeNamedMaterial(const string &name,
 
 
 void pbrtNamedMaterial(const string &name) {
+	printf("pbrtNamedMaterial\n");
     VERIFY_WORLD("NamedMaterial");
     graphicsState.currentNamedMaterial = name;
 }
 
 
 void pbrtLightSource(const string &name, const ParamSet &params) {
+	printf("pbrtLightSource\n");
     VERIFY_WORLD("LightSource");
     WARN_IF_ANIMATED_TRANSFORM("LightSource");
     Light *lt = MakeLight(name, curTransform[0], params);
@@ -981,6 +1014,7 @@ void pbrtLightSource(const string &name, const ParamSet &params) {
 
 void pbrtAreaLightSource(const string &name,
                          const ParamSet &params) {
+	printf("pbrtAreaLightSource\n");
     VERIFY_WORLD("AreaLightSource");
     graphicsState.areaLight = name;
     graphicsState.areaLightParams = params;
@@ -988,6 +1022,7 @@ void pbrtAreaLightSource(const string &name,
 
 
 void pbrtShape(const string &name, const ParamSet &params) {
+	printf("pbrtShape\n");
     VERIFY_WORLD("Shape");
     Reference<Primitive> prim;
     AreaLight *area = NULL;
@@ -1078,6 +1113,7 @@ Reference<Material> GraphicsState::CreateMaterial(const ParamSet &params) {
 
 
 void pbrtReverseOrientation() {
+	printf("pbrtReverseOrientation\n");
     VERIFY_WORLD("ReverseOrientation");
     graphicsState.reverseOrientation =
         !graphicsState.reverseOrientation;
@@ -1085,6 +1121,7 @@ void pbrtReverseOrientation() {
 
 
 void pbrtVolume(const string &name, const ParamSet &params) {
+	printf("pbrtVolume\n");
     VERIFY_WORLD("Volume");
     WARN_IF_ANIMATED_TRANSFORM("Volume");
     VolumeRegion *vr = MakeVolumeRegion(name, curTransform[0], params);
@@ -1093,6 +1130,7 @@ void pbrtVolume(const string &name, const ParamSet &params) {
 
 
 void pbrtObjectBegin(const string &name) {
+	printf("pbrtObjectBegin\n");
     VERIFY_WORLD("ObjectBegin");
     pbrtAttributeBegin();
     if (renderOptions->currentInstance)
@@ -1103,6 +1141,7 @@ void pbrtObjectBegin(const string &name) {
 
 
 void pbrtObjectEnd() {
+	printf("pbrtObjectEnd\n");
     VERIFY_WORLD("ObjectEnd");
     if (!renderOptions->currentInstance)
         Error("ObjectEnd called outside of instance definition");
@@ -1112,6 +1151,7 @@ void pbrtObjectEnd() {
 
 
 void pbrtObjectInstance(const string &name) {
+	printf("pbrtObjectInstance\n");
     VERIFY_WORLD("ObjectInstance");
     // Object instance error checking
     if (renderOptions->currentInstance) {
@@ -1148,6 +1188,7 @@ void pbrtObjectInstance(const string &name) {
 
 
 void pbrtWorldEnd() {
+	printf("pbrtWorldEnd\n");
     VERIFY_WORLD("WorldEnd");
     // Ensure there are no pushed graphics states
     while (pushedGraphicsStates.size()) {

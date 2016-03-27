@@ -29,7 +29,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="pbrtBunny.cpp">
+    <ClCompile Include="pbrtCube.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

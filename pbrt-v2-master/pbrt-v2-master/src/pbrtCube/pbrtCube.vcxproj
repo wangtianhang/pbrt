@@ -30,7 +30,7 @@
     <ProjectGuid>{7CE0954D-8C7F-4F2D-B634-955F5D584B34}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>pbrtCube</RootNamespace>
-    <ProjectName>pbrtBunny</ProjectName>
+    <ProjectName>pbrtCube</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -92,6 +92,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <ReferencePath>$(ReferencePath)</ReferencePath>
+    <IncludePath>..\;F:\GitHub\pbrt\pbrt-v2-master\pbrt-v2-master\src\core;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debugx64|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -201,7 +203,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pbrtBunny.cpp" />
+    <ClCompile Include="pbrtCube.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

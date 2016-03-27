@@ -32,10 +32,13 @@
 
 // main/pbrt.cpp*
 #include "stdafx.h"
+#include <iostream>
+
 #include "api.h"
 #include "probes.h"
 #include "parser.h"
 #include "parallel.h"
+
 
 // main program
 int main(int argc, char *argv[]) {
@@ -78,6 +81,10 @@ int main(int argc, char *argv[]) {
                 Error("Couldn't open scene file \"%s\"", filenames[i].c_str());
     }
     pbrtCleanup();
+
+	char str[8];
+	std::cin.getline(str, 5);
+
     return 0;
 }
 
