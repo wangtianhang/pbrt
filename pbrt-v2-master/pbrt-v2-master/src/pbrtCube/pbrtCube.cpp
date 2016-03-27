@@ -90,6 +90,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	ParamSet filmParamSet;
 	pbrtFilm("image", filmParamSet);
 
+	pbrtLookAt(0, 0.2, 0.2, -0.02, 0.1, 0,  0, 1, 0);
+
 	ParamSet cameraParamSet;
 	float fov = 60;
 	cameraParamSet.AddFloat("fov", &fov);
