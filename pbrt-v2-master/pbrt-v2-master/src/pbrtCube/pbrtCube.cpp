@@ -120,7 +120,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	materialColor[1] = 0.42;
 	materialColor[2] = 0.4;
 	materialParamSet.AddRGBSpectrum("Kd", materialColor, 3);
-	pbrtMaterial("matter", materialParamSet);
+	pbrtMaterial("matte", materialParamSet);
 	ParamSet sharpParamSet;
 	Point points[36];
 	for (int i = 0; i < 36; ++i)

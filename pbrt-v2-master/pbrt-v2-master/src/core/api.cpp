@@ -1204,7 +1204,9 @@ void pbrtWorldEnd() {
     // Create scene and render
     Renderer *renderer = renderOptions->MakeRenderer();
     Scene *scene = renderOptions->MakeScene();
-    if (scene && renderer) renderer->Render(scene);
+	// Ö÷äÖÈ¾º¯Êý
+    if (scene && renderer) 
+		renderer->Render(scene);
     TasksCleanup();
     delete renderer;
     delete scene;
