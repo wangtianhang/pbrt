@@ -127,11 +127,11 @@
     <Filter Include="Header Files\core\parser">
       <UniqueIdentifier>{b6a1b6cc-abd5-4113-92c5-218c39ad90c3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\core\api">
-      <UniqueIdentifier>{34ea219f-a438-4bd6-b573-67ed31ea80fd}</UniqueIdentifier>
+    <Filter Include="Header Files\core\other">
+      <UniqueIdentifier>{f530eec0-84e5-4f06-9c9a-ba9dc5d6dd03}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\core\api">
-      <UniqueIdentifier>{a61f1df5-9157-4ed7-8b55-44673138f9b2}</UniqueIdentifier>
+    <Filter Include="Source Files\core\other">
+      <UniqueIdentifier>{7b840e7d-ec61-44db-99c7-ae0407a3e9aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -537,28 +537,13 @@
     <ClInclude Include="..\core\camera.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\diffgeom.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\error.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\fileutil.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\film.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\filter.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\floatfile.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\geometry.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\imageio.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\integrator.h">
@@ -567,31 +552,13 @@
     <ClInclude Include="..\core\intersection.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\kdtree.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\light.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\material.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\memory.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\mipmap.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\montecarlo.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\octree.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\parallel.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\paramset.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\pbrt.h">
@@ -603,19 +570,10 @@
     <ClInclude Include="..\core\probes.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\progressreporter.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\quaternion.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\reflection.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\renderer.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\rng.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\sampler.h">
@@ -633,13 +591,7 @@
     <ClInclude Include="..\core\spectrum.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\stdafx.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\texture.h">
-      <Filter>Header Files\core</Filter>
-    </ClInclude>
-    <ClInclude Include="..\core\timer.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
     <ClInclude Include="..\core\transform.h">
@@ -922,7 +874,55 @@
       <Filter>Header Files\core\parser</Filter>
     </ClInclude>
     <ClInclude Include="..\core\api.h">
-      <Filter>Header Files\core\api</Filter>
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\diffgeom.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\error.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\fileutil.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\floatfile.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\imageio.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\kdtree.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\memory.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\mipmap.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\parallel.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\paramset.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\octree.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\progressreporter.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\quaternion.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\rng.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\stdafx.h">
+      <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\timer.h">
+      <Filter>Header Files\core\other</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1235,28 +1235,13 @@
     <ClCompile Include="..\core\camera.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\core\diffgeom.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\error.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\fileutil.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\core\film.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\filter.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\core\floatfile.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\core\geometry.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\imageio.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\integrator.cpp">
@@ -1271,16 +1256,7 @@
     <ClCompile Include="..\core\material.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\core\memory.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\core\montecarlo.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\parallel.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\paramset.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\primitive.cpp">
@@ -1289,19 +1265,10 @@
     <ClCompile Include="..\core\probes.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\core\progressreporter.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\quaternion.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
     <ClCompile Include="..\core\reflection.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\renderer.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\rng.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\sampler.cpp">
@@ -1323,9 +1290,6 @@
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\texture.cpp">
-      <Filter>Source Files\core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\core\timer.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
     <ClCompile Include="..\core\transform.cpp">
@@ -1692,7 +1656,43 @@
       <Filter>Source Files\core\parser</Filter>
     </ClCompile>
     <ClCompile Include="..\core\api.cpp">
-      <Filter>Source Files\core\api</Filter>
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\diffgeom.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\error.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\fileutil.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\floatfile.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\imageio.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\memory.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\parallel.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\paramset.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\progressreporter.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\quaternion.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\rng.cpp">
+      <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\timer.cpp">
+      <Filter>Source Files\core\other</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
