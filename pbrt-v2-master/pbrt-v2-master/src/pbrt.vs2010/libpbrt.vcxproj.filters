@@ -876,9 +876,6 @@
     <ClInclude Include="..\core\api.h">
       <Filter>Header Files\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\core\diffgeom.h">
-      <Filter>Header Files\core\other</Filter>
-    </ClInclude>
     <ClInclude Include="..\core\error.h">
       <Filter>Header Files\core\other</Filter>
     </ClInclude>
@@ -923,6 +920,9 @@
     </ClInclude>
     <ClInclude Include="..\core\timer.h">
       <Filter>Header Files\core\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\core\diffgeom.h">
+      <Filter>Header Files\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1658,9 +1658,6 @@
     <ClCompile Include="..\core\api.cpp">
       <Filter>Source Files\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\core\diffgeom.cpp">
-      <Filter>Source Files\core\other</Filter>
-    </ClCompile>
     <ClCompile Include="..\core\error.cpp">
       <Filter>Source Files\core\other</Filter>
     </ClCompile>
@@ -1693,6 +1690,9 @@
     </ClCompile>
     <ClCompile Include="..\core\timer.cpp">
       <Filter>Source Files\core\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\core\diffgeom.cpp">
+      <Filter>Source Files\core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
